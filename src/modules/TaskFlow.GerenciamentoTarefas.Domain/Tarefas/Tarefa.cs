@@ -25,7 +25,7 @@ namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
             Descricao = descricao;
         }
 
-        public void AbribuirResponsavel(Responsavel responsavel)
+        public void AtribuirResponsavel(Responsavel responsavel)
         {
             if (Responsavel != null)
                 throw new Exception("Já existe um reponsável atruido a tarefa.");
