@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <UserSecretsId>ea99408e-f723-4aeb-87dd-40b298e7ad4e</UserSecretsId>
+    <UserSecretsId>fecb2ac6-61c2-4dbd-b3ea-69a766031ef1</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..\..</DockerfileContext>
   </PropertyGroup>
@@ -14,10 +14,6 @@
 
   <ItemGroup>
     <Folder Include="Controllers\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TaskFlow.GerenciamentoTarefas.Domain\TaskFlow.GerenciamentoTarefas.Domain.csproj" />
   </ItemGroup>
 
 </Project>

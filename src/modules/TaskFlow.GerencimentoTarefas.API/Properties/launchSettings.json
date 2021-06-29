@@ -3,8 +3,8 @@
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
     "iisExpress": {
-      "applicationUrl": "http://localhost:9834",
-      "sslPort": 44313
+      "applicationUrl": "http://localhost:9071",
+      "sslPort": 44312
     }
   },
   "$schema": "http://json.schemastore.org/launchsettings.json",
@@ -17,7 +17,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
     },
-    "TaskFlow.GerenciamentoTarefas.API": {
+    "TaskFlow.GerencimentoTarefas.API": {
       "commandName": "Project",
       "launchBrowser": true,
       "launchUrl": "swagger",

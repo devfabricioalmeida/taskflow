@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TaskFlow.GerenciamentoTarefas.API
+namespace TaskFlow.GerencimentoTarefas.API
 {
     public class Startup
     {
@@ -30,7 +30,7 @@ namespace TaskFlow.GerenciamentoTarefas.API
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TaskFlow.GerenciamentoTarefas.API", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "TaskFlow.GerencimentoTarefas.API", Version = "v1" });
             });
         }
 
@@ -41,7 +41,7 @@ namespace TaskFlow.GerenciamentoTarefas.API
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskFlow.GerenciamentoTarefas.API v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "TaskFlow.GerencimentoTarefas.API v1"));
             }
 
             app.UseHttpsRedirection();

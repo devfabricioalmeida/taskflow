@@ -13,11 +13,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "FluxoTrabalho", "FluxoTraba
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autenticacao", "Autenticacao", "{3749C3A4-EED2-4BBA-AEED-8D88A5C964D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerenciamentoTarefas.Infrastructure", "src\modules\TaskFlow.GerenciamentoTarefas.Infrastructure\TaskFlow.GerenciamentoTarefas.Infrastructure.csproj", "{BFAAA53B-0DCF-4C6C-AF93-0C9D865DEEA9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskFlow.GerenciamentoTarefas.Domain", "src\modules\TaskFlow.GerenciamentoTarefas.Domain\TaskFlow.GerenciamentoTarefas.Domain.csproj", "{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerenciamentoTarefas.Domain", "src\modules\TaskFlow.GerenciamentoTarefas.Domain\TaskFlow.GerenciamentoTarefas.Domain.csproj", "{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerencimentoTarefas.Infrastructure", "src\modules\TaskFlow.GerencimentoTarefas.Infrastructure\TaskFlow.GerencimentoTarefas.Infrastructure.csproj", "{8E42CE75-1633-48A4-9424-C158C40AB562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerenciamentoTarefas.API", "src\modules\TaskFlow.GerenciamentoTarefas.API\TaskFlow.GerenciamentoTarefas.API.csproj", "{33FF3194-B2DC-4714-BC49-EB8DBB00D43B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerencimentoTarefas.API", "src\modules\TaskFlow.GerencimentoTarefas.API\TaskFlow.GerencimentoTarefas.API.csproj", "{8895A5FD-DB64-44CF-97D4-6A1A720552BE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,18 +25,18 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{BFAAA53B-0DCF-4C6C-AF93-0C9D865DEEA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BFAAA53B-0DCF-4C6C-AF93-0C9D865DEEA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BFAAA53B-0DCF-4C6C-AF93-0C9D865DEEA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BFAAA53B-0DCF-4C6C-AF93-0C9D865DEEA9}.Release|Any CPU.Build.0 = Release|Any CPU
 		{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}.Release|Any CPU.Build.0 = Release|Any CPU
-		{33FF3194-B2DC-4714-BC49-EB8DBB00D43B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{33FF3194-B2DC-4714-BC49-EB8DBB00D43B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{33FF3194-B2DC-4714-BC49-EB8DBB00D43B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{33FF3194-B2DC-4714-BC49-EB8DBB00D43B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E42CE75-1633-48A4-9424-C158C40AB562}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E42CE75-1633-48A4-9424-C158C40AB562}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E42CE75-1633-48A4-9424-C158C40AB562}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E42CE75-1633-48A4-9424-C158C40AB562}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,9 +45,9 @@ Global
 		{0C0D2943-6D89-43A7-9D08-0DE6862EADED} = {1CDF311D-149C-43D9-BDA9-B8147397F51D}
 		{336A8B0A-01D1-4646-AE8E-177B215D07CF} = {1CDF311D-149C-43D9-BDA9-B8147397F51D}
 		{3749C3A4-EED2-4BBA-AEED-8D88A5C964D3} = {1CDF311D-149C-43D9-BDA9-B8147397F51D}
-		{BFAAA53B-0DCF-4C6C-AF93-0C9D865DEEA9} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
 		{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
-		{33FF3194-B2DC-4714-BC49-EB8DBB00D43B} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
+		{8E42CE75-1633-48A4-9424-C158C40AB562} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
+		{8895A5FD-DB64-44CF-97D4-6A1A720552BE} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FEEEE96-448F-4038-A16E-13AF5C287E40}
