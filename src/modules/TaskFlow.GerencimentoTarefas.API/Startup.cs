@@ -11,6 +11,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using TaskFlow.GerencimentoTarefas.API.Configurations;
 
 namespace TaskFlow.GerencimentoTarefas.API
 {
@@ -28,6 +29,7 @@ namespace TaskFlow.GerencimentoTarefas.API
         {
 
             services.AddControllers();
+            services.AddServiceConfigurations();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "TaskFlow.GerencimentoTarefas.API", Version = "v1" });

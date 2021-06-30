@@ -13,7 +13,7 @@ namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
         public DateTime DataPrevisaoEntrega { get; private set; }
         public DateTime DataInicio { get; private set; }
         public Responsavel Responsavel { get; private set; }
-
+        public int Prioridade { get; private set; }
 
         private readonly List<Interacao> _interacoes = new List<Interacao>();
 
