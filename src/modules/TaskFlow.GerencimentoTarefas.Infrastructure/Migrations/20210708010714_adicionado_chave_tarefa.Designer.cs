@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts;
 
 namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
 {
     [DbContext(typeof(GerenciamentoTarefasContext))]
-    partial class GerenciamentoTarefasContextModelSnapshot : ModelSnapshot
+    [Migration("20210708010714_adicionado_chave_tarefa")]
+    partial class adicionado_chave_tarefa
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

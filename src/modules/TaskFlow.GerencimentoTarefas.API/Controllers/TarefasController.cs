@@ -1,10 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.Threading.Tasks;
+using TaskFlow.GerenciamentoTarefas.Domain.Repositories;
 using TaskFlow.GerenciamentoTarefas.Domain.Tarefas;
 using TaskFlow.GerencimentoTarefas.API.Extensions;
 using TaskFlow.GerencimentoTarefas.API.Models.Inputs;
 using TaskFlow.GerencimentoTarefas.API.Models.Mappings;
 using TaskFlow.GerencimentoTarefas.API.Models.Views;
 using TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts;
+using TaskFlow.GerencimentoTarefas.Infrastructure.Repositories;
 
 namespace TaskFlow.GerencimentoTarefas.API.Controllers
 {
@@ -12,31 +15,26 @@ namespace TaskFlow.GerencimentoTarefas.API.Controllers
     [ApiController]
     public class TarefasController : ControllerBase
     {
-        private readonly GerenciamentoTarefasContext _context;
+        private readonly ITarefaRepository _tarefaReposity;
 
-        public TarefasController(GerenciamentoTarefasContext contex)
+        public TarefasController(ITarefaRepository tarefaReposity)
         {
-            _context = contex;
+            _tarefaReposity = tarefaReposity;
         }
 
         [HttpPost("registrar")]
-        public IActionResult Registrar(TarefaInputModel input)
+        public async Task<IActionResult> Registrar(TarefaInputModel input)
         {
 
-            var responsavel = new Responsavel();
-            responsavel.Nome = "FABRICIO";
-            _context.Resposaveis.Add(responsavel);
-
-
             var tarefa = new Tarefa(input.Titulo, input.Descricao);
-            tarefa.AtribuirResponsavel(responsavel);
 
-            _context.Tarefas.Add(tarefa);
 
-            _context.SaveChanges();
+            _tarefaReposity.Add(tarefa);
+
+            var retorno = await _tarefaReposity.Commit();
+
 
             var viewModel = tarefa.ParaViewModel();
-
 
 
             return Ok(viewModel);

@@ -10,12 +10,28 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts
 {
     public class GerenciamentoTarefasContext : DbContext
     {
-        public GerenciamentoTarefasContext(DbContextOptions<GerenciamentoTarefasContext> options) : base(options){}
+        public GerenciamentoTarefasContext(DbContextOptions<GerenciamentoTarefasContext> options) : base(options) { }
 
         public DbSet<Tarefa> Tarefas { get; set; }
         public DbSet<Responsavel> Resposaveis { get; set; }
         public DbSet<Interacao> Interacoes { get; set; }
 
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+
+            foreach (var property in modelBuilder.Model.GetEntityTypes().SelectMany(p => p.GetProperties().Where(t => t.ClrType == typeof(string))))
+            {
+                int? nullableMaxLength = property.GetMaxLength();
+
+                int maxLength = nullableMaxLength ?? 100;
+
+                property.SetColumnType($"VARCHAR({maxLength})");
+            }
+  
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(GerenciamentoTarefasContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

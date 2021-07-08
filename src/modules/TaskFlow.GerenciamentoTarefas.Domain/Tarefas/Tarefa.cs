@@ -1,23 +1,29 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
 {
-    public class Tarefa : Entity
+    public class Tarefa : Entity, IAggregateRoot
     {
+   
+
         public string Titulo { get; private set; }
         public string Descricao { get; private set; }
         public DateTime DataPrevisaoEntrega { get; private set; }
         public DateTime DataInicio { get; private set; }
+        public int? ResponsalvelId { get; private set; }
         public Responsavel Responsavel { get; private set; }
         public int Prioridade { get; private set; }
 
         private readonly List<Interacao> _interacoes = new List<Interacao>();
 
         public IReadOnlyCollection<Interacao> Interacoes => _interacoes;
+
+        protected Tarefa() { }
 
         public Tarefa(string titulo, string descricao)
         {

@@ -8,7 +8,7 @@ namespace TaskFlow.GerenciamentoTarefas.Domain
 {
     public abstract class Entity
     {
-        public int Id { get; protected set; }
+        public int Id { get; protected   set; }
 
         public DateTime DataCriacao { get; private set; }
 

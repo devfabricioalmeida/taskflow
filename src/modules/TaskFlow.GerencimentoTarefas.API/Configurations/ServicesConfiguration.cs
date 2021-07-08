@@ -6,6 +6,8 @@ using System.Threading.Tasks;
 using TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts;
 using Pomelo.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TaskFlow.GerencimentoTarefas.Infrastructure.Repositories;
+using TaskFlow.GerenciamentoTarefas.Domain.Repositories;
 
 namespace TaskFlow.GerencimentoTarefas.API.Configurations
 {
@@ -17,7 +19,10 @@ namespace TaskFlow.GerencimentoTarefas.API.Configurations
 
             services.AddDbContext<GerenciamentoTarefasContext>(opt =>
             opt.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString))
+               .UseSnakeCaseNamingConvention()
             );
+
+            services.AddScoped<ITarefaRepository, TarefaRepository>();
         }
     }
 }

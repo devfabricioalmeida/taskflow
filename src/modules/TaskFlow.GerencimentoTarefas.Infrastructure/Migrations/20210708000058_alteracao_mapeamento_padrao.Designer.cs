@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts;
 
 namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
 {
     [DbContext(typeof(GerenciamentoTarefasContext))]
-    partial class GerenciamentoTarefasContextModelSnapshot : ModelSnapshot
+    [Migration("20210708000058_alteracao_mapeamento_padrao")]
+    partial class alteracao_mapeamento_padrao
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -94,25 +96,20 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
                         .HasColumnName("data_previsao_entrega");
 
                     b.Property<string>("Descricao")
-                        .HasMaxLength(500)
-                        .HasColumnType("VARCHAR(500)")
+                        .HasColumnType("VARCHAR(100)")
                         .HasColumnName("descricao");
 
                     b.Property<int>("Prioridade")
                         .HasColumnType("int")
                         .HasColumnName("prioridade");
 
-                    b.Property<int?>("ResponsalvelId")
-                        .HasColumnType("int")
-                        .HasColumnName("responsalvel_id");
-
                     b.Property<int?>("ResponsavelId")
                         .HasColumnType("int")
                         .HasColumnName("responsavel_id");
 
                     b.Property<string>("Titulo")
-                        .HasMaxLength(300)
-                        .HasColumnType("VARCHAR(300)")
+                        .HasMaxLength(250)
+                        .HasColumnType("VARCHAR(250)")
                         .HasColumnName("titulo");
 
                     b.HasKey("Id")

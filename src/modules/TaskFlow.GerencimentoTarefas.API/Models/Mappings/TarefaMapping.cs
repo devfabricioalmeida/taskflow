@@ -10,8 +10,8 @@ namespace TaskFlow.GerencimentoTarefas.API.Models.Mappings
             var tarefaViewModel = new TarefaViewModel();
             tarefaViewModel.Descricao = tarefa.Descricao;
             tarefaViewModel.Titulo = tarefa.Titulo;
-            tarefaViewModel.Responsavel = tarefa.Responsavel.Nome;
-            tarefaViewModel.ReposavelId = tarefa.Responsavel.Id;
+            //tarefaViewModel.Responsavel = tarefa.Responsavel.Nome;
+            //tarefaViewModel.ReposavelId = tarefa.Responsavel.Id;
 
             return tarefaViewModel;
         }

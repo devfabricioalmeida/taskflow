@@ -9,8 +9,8 @@ using TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts;
 namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
 {
     [DbContext(typeof(GerenciamentoTarefasContext))]
-    [Migration("20210630012702_AdicionadoPrioridade")]
-    partial class AdicionadoPrioridade
+    [Migration("20210707233713_MigracaoInicial")]
+    partial class MigracaoInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,79 +23,101 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     b.Property<string>("Conteudo")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("conteudo");
 
                     b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_criacao");
 
                     b.Property<int>("TarefaId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("tarefa_id");
 
                     b.Property<int>("UsuarioId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("usuario_id");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_interacoes");
 
-                    b.HasIndex("TarefaId");
+                    b.HasIndex("TarefaId")
+                        .HasDatabaseName("ix_interacoes_tarefa_id");
 
-                    b.ToTable("Interacoes");
+                    b.ToTable("interacoes");
                 });
 
             modelBuilder.Entity("TaskFlow.GerenciamentoTarefas.Domain.Tarefas.Responsavel", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_criacao");
 
                     b.Property<string>("Email")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("email");
 
                     b.Property<string>("Nome")
-                        .HasColumnType("longtext");
+                        .HasColumnType("longtext")
+                        .HasColumnName("nome");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_resposaveis");
 
-                    b.ToTable("Resposaveis");
+                    b.ToTable("resposaveis");
                 });
 
             modelBuilder.Entity("TaskFlow.GerenciamentoTarefas.Domain.Tarefas.Tarefa", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("id");
 
                     b.Property<DateTime>("DataCriacao")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_criacao");
 
                     b.Property<DateTime>("DataInicio")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_inicio");
 
                     b.Property<DateTime>("DataPrevisaoEntrega")
-                        .HasColumnType("datetime(6)");
+                        .HasColumnType("datetime(6)")
+                        .HasColumnName("data_previsao_entrega");
 
                     b.Property<string>("Descricao")
-                        .HasColumnType("longtext");
+                        .HasColumnType("VARCHAR(500)")
+                        .HasColumnName("descricao");
 
                     b.Property<int>("Prioridade")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("prioridade");
 
                     b.Property<int?>("ResponsavelId")
-                        .HasColumnType("int");
+                        .HasColumnType("int")
+                        .HasColumnName("responsavel_id");
 
                     b.Property<string>("Titulo")
-                        .HasColumnType("longtext");
+                        .HasColumnType("VARCHAR(300)")
+                        .HasColumnName("titulo");
 
-                    b.HasKey("Id");
+                    b.HasKey("Id")
+                        .HasName("pk_tarefa");
 
-                    b.HasIndex("ResponsavelId");
+                    b.HasIndex("ResponsavelId")
+                        .HasDatabaseName("ix_tarefa_responsavel_id");
 
-                    b.ToTable("Tarefas");
+                    b.ToTable("tarefa");
                 });
 
             modelBuilder.Entity("TaskFlow.GerenciamentoTarefas.Domain.Tarefas.Interacao", b =>
@@ -103,6 +125,7 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
                     b.HasOne("TaskFlow.GerenciamentoTarefas.Domain.Tarefas.Tarefa", null)
                         .WithMany("Interacoes")
                         .HasForeignKey("TarefaId")
+                        .HasConstraintName("fk_interacoes_tarefas_tarefa_id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
@@ -111,7 +134,8 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.Migrations
                 {
                     b.HasOne("TaskFlow.GerenciamentoTarefas.Domain.Tarefas.Responsavel", "Responsavel")
                         .WithMany()
-                        .HasForeignKey("ResponsavelId");
+                        .HasForeignKey("ResponsavelId")
+                        .HasConstraintName("fk_tarefa_resposaveis_responsavel_id");
 
                     b.Navigation("Responsavel");
                 });
