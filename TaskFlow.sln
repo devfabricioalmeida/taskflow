@@ -15,9 +15,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autenticacao", "Autenticaca
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskFlow.GerenciamentoTarefas.Domain", "src\modules\TaskFlow.GerenciamentoTarefas.Domain\TaskFlow.GerenciamentoTarefas.Domain.csproj", "{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerencimentoTarefas.Infrastructure", "src\modules\TaskFlow.GerencimentoTarefas.Infrastructure\TaskFlow.GerencimentoTarefas.Infrastructure.csproj", "{8E42CE75-1633-48A4-9424-C158C40AB562}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskFlow.GerencimentoTarefas.Infrastructure", "src\modules\TaskFlow.GerencimentoTarefas.Infrastructure\TaskFlow.GerencimentoTarefas.Infrastructure.csproj", "{8E42CE75-1633-48A4-9424-C158C40AB562}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskFlow.GerencimentoTarefas.API", "src\modules\TaskFlow.GerencimentoTarefas.API\TaskFlow.GerencimentoTarefas.API.csproj", "{8895A5FD-DB64-44CF-97D4-6A1A720552BE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaskFlow.GerencimentoTarefas.API", "src\modules\TaskFlow.GerencimentoTarefas.API\TaskFlow.GerencimentoTarefas.API.csproj", "{8895A5FD-DB64-44CF-97D4-6A1A720552BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Taskflow.Core", "src\buildingblocks\Taskflow.Core\Taskflow.Core.csproj", "{6806959E-7568-402B-8B9B-CB05BFA50EAA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +39,10 @@ Global
 		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8895A5FD-DB64-44CF-97D4-6A1A720552BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6806959E-7568-402B-8B9B-CB05BFA50EAA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6806959E-7568-402B-8B9B-CB05BFA50EAA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6806959E-7568-402B-8B9B-CB05BFA50EAA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6806959E-7568-402B-8B9B-CB05BFA50EAA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -48,6 +54,7 @@ Global
 		{009E0437-DC2E-4CA9-A4BC-B8E48AE87A76} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
 		{8E42CE75-1633-48A4-9424-C158C40AB562} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
 		{8895A5FD-DB64-44CF-97D4-6A1A720552BE} = {0C0D2943-6D89-43A7-9D08-0DE6862EADED}
+		{6806959E-7568-402B-8B9B-CB05BFA50EAA} = {11B3BFAD-D596-47DC-B0CA-4357EF5E5AD8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {5FEEEE96-448F-4038-A16E-13AF5C287E40}

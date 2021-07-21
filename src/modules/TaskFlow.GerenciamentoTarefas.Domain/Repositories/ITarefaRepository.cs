@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Taskflow.Core.Data;
 using TaskFlow.GerenciamentoTarefas.Domain.Tarefas;
 
 namespace TaskFlow.GerenciamentoTarefas.Domain.Repositories

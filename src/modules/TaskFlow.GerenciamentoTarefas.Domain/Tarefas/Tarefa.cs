@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using Taskflow.Core.Domain;
 
 namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
 {
-	public class Tarefa : Entity, IAggregateRoot
+    public class Tarefa : Entity, IAggregateRoot
     {
         public string Titulo { get; private set; }
         public string Descricao { get; private set; }
@@ -53,6 +54,15 @@ namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
             _interacoes.Add(interacao);
         }
 
+        public void AlterarDataEntrega(DateTime novaData)
+        {
+            if (StatusTarefa == StatusTarefa.Concluido || StatusTarefa == StatusTarefa.Cancelado)
+            {
+                throw new Exception("Nao é possível alterar a data de previsão de entrega para tarefa BLOQUEDA OU CANCELADA");
+            }
+
+            DataPrevisaoEntrega = novaData;
+        }
     }
 
     public enum TipoTarefa

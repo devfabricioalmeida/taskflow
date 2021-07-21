@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace TaskFlow.GerenciamentoTarefas.Domain
+namespace Taskflow.Core.Domain
 {
     public abstract class Entity
     {
-        public int Id { get; protected   set; }
+        public int Id { get; protected set; }
 
         public DateTime DataCriacao { get; private set; }
 
@@ -48,6 +44,8 @@ namespace TaskFlow.GerenciamentoTarefas.Domain
         {
             return $"{GetType().Name} [Id={Id}]";
         }
+
+        public bool MyProperty { get; set; }
 
     }
 }

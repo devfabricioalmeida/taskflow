@@ -1,4 +1,5 @@
 ﻿using System;
+using Taskflow.Core.Domain;
 
 namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
 {

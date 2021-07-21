@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Taskflow.Core.Domain;
 
-namespace TaskFlow.GerenciamentoTarefas.Domain.Repositories
+namespace Taskflow.Core.Data
 {
     public interface IRepository<TEntity> : IDisposable where TEntity : IAggregateRoot
     {
