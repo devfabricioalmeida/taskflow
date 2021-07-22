@@ -20,7 +20,7 @@ namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
                 throw new Exception("O usuário não foi informado.");
 
             if (tarefaId <= 0)
-                throw new Exception("A tarefa não foi realicionada a interação");
+                throw new Exception("A tarefa não foi relacionada a interação");
 
             if (string.IsNullOrWhiteSpace(conteudo) || string.IsNullOrEmpty(conteudo))
                 throw new Exception("O conteudo da interação não informado.");

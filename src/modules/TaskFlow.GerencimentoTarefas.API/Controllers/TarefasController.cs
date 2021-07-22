@@ -26,8 +26,7 @@ namespace TaskFlow.GerencimentoTarefas.API.Controllers
         public async Task<IActionResult> Registrar(TarefaInputModel input)
         {
 
-            var tarefa = new Tarefa(input.Titulo, input.Descricao);
-
+            var tarefa = new Tarefa(input.Titulo, input.Descricao, TipoTarefa.Implementacao);
 
             _tarefaReposity.Add(tarefa);
 

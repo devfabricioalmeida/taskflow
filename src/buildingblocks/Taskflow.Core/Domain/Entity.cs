@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using Taskflow.Core.Menssages;
 
 namespace Taskflow.Core.Domain
 {
@@ -8,6 +10,13 @@ namespace Taskflow.Core.Domain
 
         public DateTime DataCriacao { get; private set; }
 
+        private List<Event> _notifications = new List<Event>();
+        public IReadOnlyCollection<Event> Notifications => _notifications;
+
+        public void AddNotification(Event notification)
+        {
+            _notifications.Add(notification);
+        }
 
         public override bool Equals(object obj)
         {
