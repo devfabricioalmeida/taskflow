@@ -7,23 +7,47 @@ namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
 {
     public class Tarefa : Entity, IAggregateRoot
     {
-        public string Titulo { get; private set; }
-        public string Descricao { get; private set; }
+        private string _titulo;
+        private string _descricao;
+
+        public string Titulo
+        {
+            get => _titulo;
+            set
+            {
+
+                if (string.IsNullOrEmpty(value) || string.IsNullOrWhiteSpace(value))
+                    throw new Exception("O titulo não pode ser vazio");
+
+                _titulo = value;
+            }
+        }
+
+        public string Descricao
+        {
+            get => _descricao;
+            set
+            {
+                _descricao = value;
+            }
+        }
+
         public DateTime DataPrevisaoEntrega { get; private set; }
         public DateTime DataInicio { get; private set; }
-        public int? ResponsalvelId { get; private set; }
+        public int? UsuarioId { get; private set; }
         public int FluxoTrabalhoId { get; private set; }
         public TipoTarefa Tipo { get; private set; }
         public StatusTarefa Status { get; private set; }
 
         public Area Area { get; private set; }
-        public Responsavel Responsavel { get; private set; }
         public int Prioridade { get; private set; }
 
         private readonly List<Interacao> _interacoes = new();
         public IReadOnlyCollection<Interacao> Interacoes => _interacoes;
 
         private readonly List<Anexo> _anexos = new();
+
+
         public IReadOnlyCollection<Anexo> Anexos => _anexos;
 
         protected Tarefa() { }
@@ -36,12 +60,12 @@ namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
             Status = StatusTarefa.Ativo;
         }
 
-        public void AtribuirResponsavel(Responsavel responsavel)
+        public void AtribuirUsuarioResponsavel(Usuario usuario)
         {
-            if (Responsavel != null)
+            if (Usuario != null)
                 throw new Exception("Já existe um reponsável atruido a tarefa.");
 
-            Responsavel = responsavel;
+            Usuario = usuario;
         }
 
         public void ProrrogarPrevisaoEntrega(DateTime novaPrevisao)

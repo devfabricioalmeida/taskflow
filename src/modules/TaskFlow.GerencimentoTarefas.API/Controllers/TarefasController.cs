@@ -15,7 +15,7 @@ namespace TaskFlow.GerencimentoTarefas.API.Controllers
     [ApiController]
     public class TarefasController : ControllerBase
     {
-        private readonly ITarefaRepository _tarefaReposity;
+    
 
         public TarefasController(ITarefaRepository tarefaReposity)
         {
@@ -26,15 +26,9 @@ namespace TaskFlow.GerencimentoTarefas.API.Controllers
         public async Task<IActionResult> Registrar(TarefaInputModel input)
         {
 
-            var tarefa = new Tarefa(input.Titulo, input.Descricao, TipoTarefa.Implementacao);
+         
 
-            _tarefaReposity.Add(tarefa);
-
-            var retorno = await _tarefaReposity.Commit();
-
-
-            var viewModel = tarefa.ParaViewModel();
-
+        
 
             return Ok(viewModel);
         }

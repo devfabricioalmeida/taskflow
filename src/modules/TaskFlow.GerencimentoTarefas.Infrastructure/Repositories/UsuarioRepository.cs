@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using TaskFlow.GerenciamentoTarefas.Domain.Repositories;
 using TaskFlow.GerenciamentoTarefas.Domain.Tarefas;
@@ -6,23 +9,24 @@ using TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts;
 
 namespace TaskFlow.GerencimentoTarefas.Infrastructure.Repositories
 {
-    public class TarefaRepository : ITarefaRepository
+    public class UsuarioRepository : IUsuarioRepository
     {
         private readonly GerenciamentoTarefasContext _context;
 
-        public TarefaRepository(GerenciamentoTarefasContext context)
+        public UsuarioRepository(GerenciamentoTarefasContext context)
         {
             _context = context;
         }
 
-        public void Add(Tarefa entity)
+        public void Add(Usuario entity)
         {
-            _context.Add(entity);
+            _context.Usuarios.Add(entity);
         }
 
         public async Task<bool> Commit()
         {
-            return await _context.SaveChangesAsync() > 0;
+            int result = await _context.SaveChangesAsync();
+            return result > 0;
         }
 
         public void Dispose()
@@ -30,16 +34,14 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.Repositories
             _context.Dispose();
         }
 
-        public Task<Tarefa> GetById(int id)
+        public async Task<Usuario> GetById(int id)
         {
-            return _context.Tarefas.Include(p => p.Interacoes).FirstOrDefaultAsync(t => t.Id == id);
+            return await _context.Usuarios.FindAsync(id);
         }
 
-        public void Update(Tarefa entity)
+        public void Update(Usuario entity)
         {
-            _context.Update(entity);
+            _context.Usuarios.Update(entity);
         }
     }
-
-
 }

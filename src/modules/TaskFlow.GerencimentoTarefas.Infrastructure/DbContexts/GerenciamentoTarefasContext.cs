@@ -13,7 +13,7 @@ namespace TaskFlow.GerencimentoTarefas.Infrastructure.DbContexts
         public GerenciamentoTarefasContext(DbContextOptions<GerenciamentoTarefasContext> options) : base(options) { }
 
         public DbSet<Tarefa> Tarefas { get; set; }
-        public DbSet<Responsavel> Resposaveis { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Interacao> Interacoes { get; set; }
 
 

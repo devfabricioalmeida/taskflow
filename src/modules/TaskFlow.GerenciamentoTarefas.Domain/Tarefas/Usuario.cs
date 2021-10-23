@@ -2,7 +2,9 @@
 
 namespace TaskFlow.GerenciamentoTarefas.Domain.Tarefas
 {
-	public class Usuario : Entity {
-		public string Nome { get; set; }
-	}
+    public class Usuario : Entity, IAggregateRoot
+    {
+        public string Nome { get; set; }
+        public string Email { get; set; }
+    }
 }

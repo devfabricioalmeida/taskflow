@@ -20,12 +20,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Application\" />
+    <ProjectReference Include="..\TaskFlow.GerenciamentoTarefas.Domain\TaskFlow.GerenciamentoTarefas.Domain.csproj" />
+    <ProjectReference Include="..\TaskFlow.GerencimentoTarefas.Infrastructure\TaskFlow.GerencimentoTarefas.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TaskFlow.GerenciamentoTarefas.Domain\TaskFlow.GerenciamentoTarefas.Domain.csproj" />
-    <ProjectReference Include="..\TaskFlow.GerencimentoTarefas.Infrastructure\TaskFlow.GerencimentoTarefas.Infrastructure.csproj" />
+    <Folder Include="Models\Inputs\" />
   </ItemGroup>
 
 </Project>

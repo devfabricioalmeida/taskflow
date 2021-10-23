@@ -54,7 +54,7 @@ namespace Taskflow.Core.Domain
             return $"{GetType().Name} [Id={Id}]";
         }
 
-        public bool MyProperty { get; set; }
+        public bool IsValid { get; set; }
 
     }
 }
